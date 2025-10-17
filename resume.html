@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>阮垂玲 - 履歷</title>
+  <style>
+    :root{
+      --bg:#f6f8fb; --card:#ffffff; --accent:#2b7cff; --muted:#6b7280; --radius:12px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial; background:var(--bg); margin:24px; color:#0f172a}
+    .container{max-width:880px;margin:0 auto}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,42,0.06);overflow:hidden;display:grid;grid-template-columns:260px 1fr}
+    header{padding:20px 24px;background:linear-gradient(180deg,rgba(43,124,255,0.08),transparent)}
+    .left{padding:28px;border-right:1px solid #eef2f7}
+    .right{padding:28px}
+    .avatar{width:120px;height:120px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7be3ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+    h1{margin:0;font-size:20px}
+    .sub{color:var(--muted);font-size:13px;margin-top:6px}
+    .section{margin-bottom:18px}
+    .section h3{font-size:14px;margin:0 0 10px 0}
+    ul{padding-left:16px;margin:0}
+    li{margin-bottom:8px}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef6ff;color:var(--accent);font-size:13px;margin:6px 6px 0 0}
+    .meta{font-size:13px;color:var(--muted);margin-top:6px}
+    .top-row{display:flex;justify-content:space-between;align-items:center}
+    .controls{display:flex;gap:8px}
+    button{background:transparent;border:1px solid #e6eefc;padding:8px 12px;border-radius:8px;cursor:pointer}
+    button.primary{background:var(--accent);color:white;border:0}
+    @media (max-width:760px){
+      .card{grid-template-columns:1fr;}
+      .left{border-right:0;border-bottom:1px solid #eef2f7}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-row" style="margin-bottom:12px">
+      <div style="font-weight:700">簡易履歷範本</div>
+      <div class="controls">
+        <button onclick="toggleTheme()">切換深色</button>
+        <button class="primary" onclick="window.print()">列印 / 存成 PDF</button>
+      </div>
+    </div>
+
+    <div class="card" id="resume">
+      <div class="left">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="avatar" id="avatar">阮</div>
+          <div>
+            <h1 id="name">阮垂玲</h1>
+            <div class="sub">學號：<strong>14141414</strong></div>
+            <div class="meta">電子郵件：jennisnguyen2006@gmail.com<br>電話：+886 91-123-1234</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>個人簡介</h3>
+          <div class="meta" id="summary">積極學習的新鮮人，擁有良好溝通與團隊合作能力，熱衷於前端開發與使用者體驗改善。</div>
+        </div>
+
+        <div class="section">
+          <h3>技能</h3>
+          <div>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Git</span>
+            <span class="tag">Bootstrap</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>語言</h3>
+          <ul>
+            <li>中文（母語）</li>
+            <li>英語（中等）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="section">
+          <h3>學歷</h3>
+          <div>
+            <strong>亞洲大學</strong> — 資訊/相關科系<br>
+            <div class="meta">202x - 202x（預計）</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>專案經驗</h3>
+          <ul>
+            <li><strong>個人作品集網站</strong> — 使用 HTML/CSS/JS 建置，展示作品與聯絡資訊。</li>
+            <li><strong>課程專題：團隊協作平台</strong> — 負責前端介面設計與串接模擬 API。</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h3>實習 / 工作經驗</h3>
+          <ul>
+            <li><strong>實習生 — 某科技公司</strong>（2023 夏季）: 撰寫測試頁面、協助前端開發與除錯。</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h3>興趣</h3>
+          <div class="meta">閱讀、跑步、開源專案、攝影</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="margin-top:10px;font-size:13px;color:var(--muted)">提示：可按「列印 / 存成 PDF」將履歷儲存。想要我把內容改成英文、替換成你的真人姓名或加入照片嗎？回覆我需要的修改即可。</div>
+  </div>
+
+  <script>
+    // 小互動：切換深色模式並儲存於 localStorage
+    function toggleTheme(){
+      const dark = document.documentElement.style.getPropertyValue('--bg') === '#0b1220' || document.body.dataset.theme==='dark';
+      if(!dark){
+        document.body.dataset.theme='dark';
+        document.documentElement.style.setProperty('--bg','#0b1220');
+        document.documentElement.style.setProperty('--card','#0b1226');
+        document.documentElement.style.setProperty('--accent','#4ea8ff');
+        document.documentElement.style.setProperty('--muted','#9aa4b2');
+        document.documentElement.style.setProperty('color','#e6eef8');
+      } else {
+        document.body.dataset.theme='light';
+        document.documentElement.style.setProperty('--bg','#f6f8fb');
+        document.documentElement.style.setProperty('--card','#ffffff');
+        document.documentElement.style.setProperty('--accent','#2b7cff');
+        document.documentElement.style.setProperty('--muted','#6b7280');
+        document.documentElement.style.setProperty('color','#0f172a');
+      }
+      localStorage.setItem('resume-theme', document.body.dataset.theme);
+    }
+    // 載入使用者偏好
+    (function(){
+      const t = localStorage.getItem('resume-theme');
+      if(t==='dark') toggleTheme();
+    })();
+  </script>
+</body>
+</html>
