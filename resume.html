@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>软垂玲 — AU114011144</title>
+  <style>
+    :root{--bg:#f5f7fb;--card:#fff;--accent:#0b71ea;--muted:#6b7280;--glass:rgba(11,113,234,0.08);--radius:12px}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans TC',Helvetica,Arial; margin:24px; background:var(--bg); color:#0f1724}
+    .wrap{max-width:900px;margin:0 auto}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:0 6px 24px rgba(12,20,40,0.06);overflow:hidden;display:grid;grid-template-columns:260px 1fr}
+    .left{padding:28px;background:linear-gradient(180deg,var(--glass),transparent)}
+    .avatar{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#6ec1ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:32px;margin-bottom:18px}
+    h1{font-size:20px;margin:0 0 6px}
+    .id{font-size:12px;color:var(--muted);margin-bottom:14px}
+    .meta{font-size:14px;color:var(--muted);line-height:1.6}
+    .section{padding:26px}
+    .section h2{font-size:16px;margin:0 0 12px;color:#0b1220}
+    .badge{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;font-size:13px;margin:6px 6px 0 0}
+    .skills{display:flex;flex-wrap:wrap}
+    .skill{background:#eef6ff;padding:6px 10px;border-radius:8px;margin:6px;font-size:13px}
+    .timeline{border-left:2px solid #eef2ff;padding-left:14px}
+    .item{margin-bottom:14px}
+    .muted{color:var(--muted)}
+    .top-actions{display:flex;gap:8px;align-items:center;justify-content:flex-end;padding:14px}
+    .btn{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(11,113,234,0.15)}
+    .contact{margin-top:12px;font-size:14px}
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:14px;text-align:center;color:var(--muted);font-size:13px}
+    @media (max-width:720px){.card{grid-template-columns:1fr;}.left{display:flex;flex-direction:row;gap:16px;align-items:center}.section{padding:18px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top-actions">
+      <button class="btn" id="printBtn" title="列印/儲存為PDF">列印 / 下載 PDF</button>
+      <button class="btn secondary" id="themeBtn" title="切換深色/淺色">切換主題</button>
+    </div>
+
+    <div class="card" id="resume">
+      <div class="left">
+        <div style="display:flex;flex-direction:column;align-items:flex-start">
+          <div class="avatar" id="avatar">AU</div>
+          <h1 id="name">阮垂玲</h1>
+          <div class="id">學號: <strong>AU114011144</strong></div>
+          <div class="meta">
+            <div class="contact">📧 <span id="email">youremail@gmail.com</span></div>
+            <div class="contact">📞 <span id="phone">09xx-xxx-161</span></div>
+            <div class="contact">📍 <span id="location">台灣</span></div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="small">技能</div>
+            <div class="skills" id="skills">
+              <div class="skill">HTML</div>
+              <div class="skill">CSS</div>
+              <div class="skill">JavaScript</div>
+              <div class="skill">溝通</div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="small">語言</div>
+            <div class="badge">中文（中等）</div>
+            <div class="badge">英文（中等）</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>關於我</h2>
+        <p id="about" class="muted">一段 2-3 句的自我介紹。舉例：目前就讀 X 科系，對前端開發與使用者體驗設計有興趣，喜歡以清楚、可維護的程式碼解決問題。</p>
+
+        <h2>學歷</h2>
+        <div class="timeline">
+          <div class="item">
+            <div style="font-weight:600">亞州大學 / 建管科系</div>
+            <div class="small muted">2025 - 至今</div>
+            <div class="muted">主修：某某課程，相關科目：網站設計、資料庫概論</div>
+          </div>
+        </div>
+
+        <h2>實習 / 經歷</h2>
+        <div class="timeline">
+          <div class="item">
+            <div style="font-weight:600">前端實習生 — 公司名稱</div>
+            <div class="small muted">2024 / 夏季</div>
+            <div class="muted">協助製作公司內部管理系統頁面、修正 RWD 問題、與設計師溝通稿件。</div>
+          </div>
+        </div>
+
+        <h2>專案</h2>
+        <div class="timeline">
+          <div class="item">
+            <div style="font-weight:600">個人履歷網站</div>
+            <div class="small muted">HTML / CSS / JS</div>
+            <div class="muted">這份履歷即為範例專案，單檔 HTML 可直接編輯與上傳至 GitHub Pages。</div>
+          </div>
+        </div>
+
+        <h2>其他</h2>
+        <p class="muted">可放置興趣、證照或社團經歷等。</p>
+      </div>
+    </div>
+
+    <footer>若要修改內容，請直接在左側欄位或點選「編輯內容」按鈕（下方）。</footer>
+
+    <div style="margin-top:14px;display:flex;gap:8px;justify-content:center">
+      <button class="btn" id="editBtn">編輯內容</button>
+      <button class="btn secondary" id="resetBtn">回復範例內容</button>
+    </div>
+  </div>
+
+  <script>
+    // 基本互動：列印 / 主題切換 / 編輯
+    const printBtn = document.getElementById('printBtn');
+    const themeBtn = document.getElementById('themeBtn');
+    const editBtn = document.getElementById('editBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+
+    let dark = false;
+    themeBtn.addEventListener('click', () => {
+      dark = !dark;
+      if(dark){
+        document.documentElement.style.setProperty('--bg','#0b1220');
+        document.documentElement.style.setProperty('--card','#071627');
+        document.documentElement.style.setProperty('--accent','#6ec1ff');
+        document.documentElement.style.setProperty('--muted','#9fb0c7');
+        document.body.style.color='#e6f0ff';
+      } else {
+        document.documentElement.style.setProperty('--bg','#f5f7fb');
+        document.documentElement.style.setProperty('--card','#fff');
+        document.documentElement.style.setProperty('--accent','#0b71ea');
+        document.documentElement.style.setProperty('--muted','#6b7280');
+        document.body.style.color='#0f1724';
+      }
+    });
+
+    editBtn.addEventListener('click', () => {
+      // 簡單逐欄編輯器（prompt）——快速又直覺
+      const name = prompt('姓名：', document.getElementById('name').innerText);
+      if(name) document.getElementById('name').innerText = name;
+
+      const about = prompt('關於我（短句）：', document.getElementById('about').innerText);
+      if(about) document.getElementById('about').innerText = about;
+
+      const email = prompt('電子郵件：', document.getElementById('email').innerText);
+      if(email) document.getElementById('email').innerText = email;
+
+      const phone = prompt('電話：', document.getElementById('phone').innerText);
+      if(phone) document.getElementById('phone').innerText = phone;
+
+      const location = prompt('地點：', document.getElementById('location').innerText);
+      if(location) document.getElementById('location').innerText = location;
+
+      // 更新大頭貼字母
+      const avatar = document.getElementById('avatar');
+      avatar.innerText = (document.getElementById('name').innerText || 'AU').split(' ').map(s=>s[0]).slice(0,2).join('').toUpperCase();
+    });
+
+    resetBtn.addEventListener('click', () => {
+      document.getElementById('name').innerText = '學生姓名（請替換）';
+      document.getElementById('about').innerText = '一段 2-3 句的自我介紹。舉例：目前就讀 X 科系，對前端開發與使用者體驗設計有興趣，喜歡以清楚、可維護的程式碼解決問題。';
+      document.getElementById('email').innerText = 'youremail@example.com';
+      document.getElementById('phone').innerText = '0900-000-000';
+      document.getElementById('location').innerText = '台灣';
+      document.getElementById('avatar').innerText = 'AU';
+    });
+
+    // 初始化 avatar
+    (function(){
+      const avatar = document.getElementById('avatar');
+      if(!avatar.innerText.trim()) avatar.innerText = 'AU';
+    })();
+  </script>
+</body>
+</html>
