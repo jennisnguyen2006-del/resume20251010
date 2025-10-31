@@ -11,7 +11,7 @@
     .wrap{max-width:900px;margin:0 auto}
     .card{background:var(--card);border-radius:var(--radius);box-shadow:0 6px 24px rgba(12,20,40,0.06);overflow:hidden;display:grid;grid-template-columns:260px 1fr}
     .left{padding:28px;background:linear-gradient(180deg,var(--glass),transparent)}
-    .avatar{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#6ec1ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:32px;margin-bottom:18px}
+    .avatar-img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:18px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
     h1{font-size:20px;margin:0 0 6px}
     .id{font-size:12px;color:var(--muted);margin-bottom:14px}
     .meta{font-size:14px;color:var(--muted);line-height:1.6}
@@ -42,15 +42,13 @@
     <div class="card" id="resume">
       <div class="left">
         <div style="display:flex;flex-direction:column;align-items:flex-start">
-          <div class="avatar" id="avatar">
-            <img src="image/photo.jpg" alt="個人照片" style="width:120px;height:120px;border-radius:50%;object-fit:cover;"></div>
+          <img src="image/photo.jpg" class="avatar-img" alt="個人照片">
           <h1 id="name">阮垂玲</h1>
           <div class="id">學號: <strong>AU114011144</strong></div>
           <div class="meta">
             <div class="contact">📧 <span id="email">youremail@gmail.com</span></div>
             <div class="contact">📞 <span id="phone">09xx-xxx-161</span></div>
             <div class="contact">📍 <span id="location">台灣</span></div>
-            <div class="contact">🥰 <span id="愛好">🎨🎤🏸🎻</span></div>
           </div>
 
           <div style="margin-top:14px">
@@ -65,7 +63,6 @@
 
           <div style="margin-top:14px">
             <div class="small">語言</div>
-            <div class="badge">越南文（母語）</div>
             <div class="badge">中文（中等）</div>
             <div class="badge">英文（中等）</div>
           </div>
@@ -73,14 +70,14 @@
       </div>
 
       <div class="section">
-        <h2>自己介紹</h2>
-        <p id="about" class="muted">大家好！我叫阮垂玲，來從越南。我是個友善並且每天都努力讓自己變得更好的人。我熱愛看電影和畫畫，因為這能讓我放鬆心情，同時培養創造力與藝術感。現在我居住並就讀於台灣，在這裡我不斷拓展視野、充實知識，並學習新的文化價值，使自己每天都能更全面地成長與進步。</p>
+        <h2>關於我</h2>
+        <p id="about" class="muted">一段 2-3 句的自我介紹。舉例：目前就讀 X 科系，對前端開發與使用者體驗設計有興趣，喜歡以清楚、可維護的程式碼解決問題。</p>
 
         <h2>學歷</h2>
         <div class="timeline">
           <div class="item">
             <div style="font-weight:600">亞州大學 / 建管科系</div>
-            <div class="small muted">2025 - 20xx</div>
+            <div class="small muted">2025 - 至今</div>
             <div class="muted">主修：某某課程，相關科目：網站設計、資料庫概論</div>
           </div>
         </div>
@@ -117,16 +114,10 @@
   </div>
 
   <script>
-    // 基本互動：列印 / 主題切換 / 編輯
     const printBtn = document.getElementById('printBtn');
     const themeBtn = document.getElementById('themeBtn');
-    const editBtn = document.getElementById('editBtn');
-    const resetBtn = document.getElementById('resetBtn');
 
-    printBtn.addEventListener('click', () => {
-      window.print();
-    });
-
+    printBtn.addEventListener('click', () => window.print());
     let dark = false;
     themeBtn.addEventListener('click', () => {
       dark = !dark;
@@ -144,43 +135,6 @@
         document.body.style.color='#0f1724';
       }
     });
-
-    editBtn.addEventListener('click', () => {
-      // 簡單逐欄編輯器（prompt）——快速又直覺
-      const name = prompt('姓名：', document.getElementById('name').innerText);
-      if(name) document.getElementById('name').innerText = name;
-
-      const about = prompt('關於我（短句）：', document.getElementById('about').innerText);
-      if(about) document.getElementById('about').innerText = about;
-
-      const email = prompt('電子郵件：', document.getElementById('email').innerText);
-      if(email) document.getElementById('email').innerText = email;
-
-      const phone = prompt('電話：', document.getElementById('phone').innerText);
-      if(phone) document.getElementById('phone').innerText = phone;
-
-      const location = prompt('地點：', document.getElementById('location').innerText);
-      if(location) document.getElementById('location').innerText = location;
-
-      // 更新大頭貼字母
-      const avatar = document.getElementById('avatar');
-      avatar.innerText = (document.getElementById('name').innerText || 'AU').split(' ').map(s=>s[0]).slice(0,2).join('').toUpperCase();
-    });
-
-    resetBtn.addEventListener('click', () => {
-      document.getElementById('name').innerText = '學生姓名（請替換）';
-      document.getElementById('about').innerText = '一段 2-3 句的自我介紹。舉例：目前就讀 X 科系，對前端開發與使用者體驗設計有興趣，喜歡以清楚、可維護的程式碼解決問題。';
-      document.getElementById('email').innerText = 'youremail@example.com';
-      document.getElementById('phone').innerText = '0900-000-000';
-      document.getElementById('location').innerText = '台灣';
-      document.getElementById('avatar').innerText = 'AU';
-    });
-
-    // 初始化 avatar
-    (function(){
-      const avatar = document.getElementById('avatar');
-      if(!avatar.innerText.trim()) avatar.innerText = 'AU';
-    })();
   </script>
 </body>
 </html>
