@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>阮垂玲 — AU114011144</title>
+  <style>
+    :root{--bg:#f5f7fb;--card:#fff;--accent:#0b71ea;--muted:#6b7280;--glass:rgba(11,113,234,0.08);--radius:12px}
+    *{box-sizing:border-box}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans TC',Helvetica,Arial;
+      margin:24px;
+      background:url('image/orange.png') no-repeat center center fixed;
+      background-size:cover;
+      color:#0f1724;
+      position:relative;
+      overflow:hidden;
+    }
+    body::before{
+      content:'';
+      position:absolute;
+      top:0;left:0;right:0;bottom:0;
+      background:rgba(255,255,255,0.85);
+      backdrop-filter:blur(2px);
+      z-index:0;
+    }
+    .emoji{
+      position:fixed;
+      font-size:40px;
+      opacity:0.15;
+      animation:floatUp linear infinite;
+      z-index:0;
+      user-select:none;
+      pointer-events:none;
+    }
+    @keyframes floatUp{
+      0%{transform:translateY(100vh) scale(1) rotate(0deg); opacity:0;}
+      10%{opacity:0.15;}
+      90%{opacity:0.15;}
+      100%{transform:translateY(-10vh) scale(1.2) rotate(360deg); opacity:0;}
+    }
+    .wrap{max-width:900px;margin:0 auto;position:relative;z-index:1;}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:0 6px 24px rgba(12,20,40,0.06);overflow:hidden;display:grid;grid-template-columns:260px 1fr}
+    .left{padding:28px;background:linear-gradient(180deg,var(--glass),transparent)}
+    .avatar-img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:18px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
+    h1{font-size:20px;margin:0 0 6px}
+    .id{font-size:12px;color:var(--muted);margin-bottom:14px}
+    .meta{font-size:14px;color:var(--muted);line-height:1.6}
+    .section{padding:26px}
+    .section h2{font-size:16px;margin:0 0 12px;color:#0b1220}
+    .badge{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;font-size:13px;margin:6px 6px 0 0}
+    .skills{display:flex;flex-wrap:wrap}
+    .skill{background:#eef6ff;padding:6px 10px;border-radius:8px;margin:6px;font-size:13px}
+    .timeline{border-left:2px solid #eef2ff;padding-left:14px}
+    .item{margin-bottom:14px}
+    .muted{color:var(--muted)}
+    .top-actions{display:flex;gap:8px;align-items:center;justify-content:flex-end;padding:14px}
+    .btn{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(11,113,234,0.15)}
+    .contact{margin-top:12px;font-size:14px}
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:14px;text-align:center;color:var(--muted);font-size:13px}
+    @media (max-width:720px){.card{grid-template-columns:1fr;}.left{display:flex;flex-direction:row;gap:16px;align-items:center}.section{padding:18px}}
+  </style>
+</head>
+<body>
+  <!-- Emoji bay nhẹ 🍊🥕🍍 -->
+  <div id="emoji-container"></div>
+
+  <div class="wrap">
+    <div class="top-actions">
+      <button class="btn" id="printBtn" title="列印/儲存為PDF">列印 / 下載 PDF</button>
+      <button class="btn secondary" id="themeBtn" title="切換深色/淺色">切換主題</button>
+    </div>
+
+    <div class="card" id="resume">
+      <div class="left">
+        <div style="display:flex;flex-direction:column;align-items:flex-start">
+          <img src="image/photo.jpg" class="avatar-img" alt="個人照片">
+          <h1 id="name">阮垂玲</h1>
+          <div class="id">學號: <strong>AU114011144</strong></div>
+          <div class="meta">
+            <div class="contact">📧 <span id="email">youremail@gmail.com</span></div>
+            <div class="contact">📞 <span id="phone">09xx-xxx-161</span></div>
+            <div class="contact">📍 <span id="location">台灣</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>關於我</h2>
+        <p id="about" class="muted">一段 2-3 句的自我介紹。舉例：目前就讀 X 科系，對前端開發與使用者體驗設計有興趣，喜歡以清楚、可維護的程式碼解決問題。</p>
+
+        <h2>學歷</h2>
+        <div class="timeline">
+          <div class="item">
+            <div style="font-weight:600">亞州大學 / 建管科系</div>
+            <div class="small muted">2025 - 至今</div>
+            <div class="muted">主修：某某課程，相關科目：網站設計、資料庫概論</div>
+          </div>
+        </div>
+
+        <h2>實習 / 經歷</h2>
+        <div class="timeline">
+          <div class="item">
+            <div style="font-weight:600">前端實習生 — 公司名稱</div>
+            <div class="small muted">2024 / 夏季</div>
+            <div class="muted">協助製作公司內部管理系統頁面、修正 RWD 問題、與設計師溝通稿件。</div>
+          </div>
+        </div>
+
+        <h2>專案</h2>
+        <div class="timeline">
+          <div class="item">
+            <div style="font-weight:600">個人履歷網站</div>
+            <div class="small muted">HTML / CSS / JS</div>
+            <div class="muted">這份履歷即為範例專案，單檔 HTML 可直接編輯與上傳至 GitHub Pages。</div>
+          </div>
+        </div>
+
+        <h2>其他</h2>
+        <p class="muted">可放置興趣、證照或社團經歷等。</p>
+      </div>
+    </div>
+
+    <footer>🍊🥕🍍 背景動畫版本</footer>
+  </div>
+
+  <script>
+    // Emoji bay 🍊🥕🍍
+    const emojis = ['🍊', '🥕', '🍍'];
+    const container = document.getElementById('emoji-container');
+
+    for (let i = 0; i < 15; i++) { // số lượng vừa phải
+      const span = document.createElement('span');
+      span.className = 'emoji';
+      span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      span.style.left = Math.random() * 100 + 'vw';
+      span.style.animationDuration = 10 + Math.random() * 10 + 's';
+      span.style.animationDelay = Math.random() * 10 + 's';
+      container.appendChild(span);
+    }
+
+    const printBtn = document.getElementById('printBtn');
+    const themeBtn = document.getElementById('themeBtn');
+
+    printBtn.addEventListener('click', () => window.print());
+    let dark = false;
+    themeBtn.addEventListener('click', () => {
+      dark = !dark;
+      if(dark){
+        document.documentElement.style.setProperty('--bg','#0b1220');
+        document.documentElement.style.setProperty('--card','#071627');
+        document.documentElement.style.setProperty('--accent','#6ec1ff');
+        document.documentElement.style.setProperty('--muted','#9fb0c7');
+        document.body.style.color='#e6f0ff';
+      } else {
+        document.documentElement.style.setProperty('--bg','#f5f7fb');
+        document.documentElement.style.setProperty('--card','#fff');
+        document.documentElement.style.setProperty('--accent','#0b71ea');
+        document.documentElement.style.setProperty('--muted','#6b7280');
+        document.body.style.color='#0f1724';
+      }
+    });
+  </script>
+</body>
+</html>
